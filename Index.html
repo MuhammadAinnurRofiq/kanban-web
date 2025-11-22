@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kanban Board - Attaqwa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; background: #f3f4f6; }
+    h1 { font-size: 1.4rem; margin-bottom: 1rem; }
+    .board { display: flex; gap: 1rem; overflow-x: auto; }
+    .column {
+      min-width: 260px;
+      background: white;
+      border-radius: .75rem;
+      padding: .75rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,.08);
+    }
+    .column-title { font-weight: 600; margin-bottom: .5rem; }
+    .card {
+      background: #e5e7eb;
+      border-radius: .5rem;
+      padding: .5rem .75rem;
+      margin-bottom: .5rem;
+      font-size: .9rem;
+    }
+    .add-card-form input {
+      width: 100%;
+      padding: .4rem .5rem;
+      border-radius: .5rem;
+      border: 1px solid #d1d5db;
+      font-size: .9rem;
+    }
+    .add-card-form button {
+      margin-top: .4rem;
+      width: 100%;
+      padding: .35rem;
+      border-radius: .5rem;
+      border: none;
+      background: #0f766e;
+      color: white;
+      font-size: .9rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Kanban Board Sederhana</h1>
+  <div class="board" id="board">
+    <div class="column" data-column="todo">
+      <div class="column-title">To Do</div>
+      <div class="column-cards" id="todo-cards"></div>
+      <form class="add-card-form" data-column="todo">
+        <input type="text" placeholder="Tambah tugas..." />
+        <button type="submit">Tambah</button>
+      </form>
+    </div>
+
+    <div class="column" data-column="doing">
+      <div class="column-title">Doing</div>
+      <div class="column-cards" id="doing-cards"></div>
+      <form class="add-card-form" data-column="doing">
+        <input type="text" placeholder="Tambah tugas..." />
+        <button type="submit">Tambah</button>
+      </form>
+    </div>
+
+    <div class="column" data-column="done">
+      <div class="column-title">Done</div>
+      <div class="column-cards" id="done-cards"></div>
+      <form class="add-card-form" data-column="done">
+        <input type="text" placeholder="Tambah tugas..." />
+        <button type="submit">Tambah</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
